@@ -16,26 +16,69 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://horizonvirtualcare.com"),
-  title: "Horizon Virtual Care | Virtual Nephrology Care for Your Community",
+  title: "Horizon Virtual Care | Virtual Nephrology & Kidney Care Specialist",
   description:
-    "Bringing dedicated kidney care specialists and virtual telehealth solutions to underserved communities, ensuring expert nephrology care is kept local.",
+    "Horizon Virtual Care delivers board-certified nephrology specialists and virtual clinical programs to rural clinics, community hospitals, and correctional healthcare networks.",
+  keywords: [
+    "Virtual Nephrology",
+    "TeleNeph",
+    "Kidney Care Specialist",
+    "Rural Telehealth Nephrology",
+    "Inpatient Renal Consults",
+    "Dialysis Support Programs",
+    "Community Hospital Telehealth",
+    "Horizon Virtual Care",
+    "Chronic Kidney Disease Management",
+    "Hypertension Specialist"
+  ],
+  authors: [{ name: "Horizon Virtual Care" }],
+  creator: "Horizon Virtual Care",
+  publisher: "Horizon Virtual Care",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   openGraph: {
-    title: "Horizon Virtual Care | Virtual Nephrology Care for Your Community",
+    title: "Horizon Virtual Care | Virtual Nephrology & Kidney Care Specialist",
     description:
-      "Bringing dedicated kidney care specialists and virtual telehealth solutions to underserved communities, ensuring expert nephrology care is kept local.",
+      "Horizon Virtual Care delivers board-certified nephrology specialists and virtual clinical programs to rural clinics, community hospitals, and correctional healthcare networks.",
     url: "/",
     siteName: "Horizon Virtual Care",
+    images: [
+      {
+        url: "/images/logo.png",
+        width: 800,
+        height: 600,
+        alt: "Horizon Virtual Care Logo",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Horizon Virtual Care | Virtual Nephrology Care for Your Community",
+    title: "Horizon Virtual Care | Virtual Nephrology & Kidney Care Specialist",
     description:
-      "Bringing dedicated kidney care specialists and virtual telehealth solutions to underserved communities, ensuring expert nephrology care is kept local.",
+      "Horizon Virtual Care delivers board-certified nephrology specialists and virtual clinical programs to rural clinics, community hospitals, and correctional healthcare networks.",
+    images: ["/images/logo.png"],
+    creator: "@HorizonVirtualCare",
   },
 };
 
