@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
 import { ArrowLeft, CheckCircle2, Mail, GraduationCap, Calendar, ShieldCheck, Heart } from "lucide-react";
 import PageHeader from "@/components/sections/shared/PageHeader";
 import CtaBand from "@/components/sections/shared/CtaBand";
@@ -32,6 +33,40 @@ interface BioPageProps {
   params: Promise<{ id: string }>;
 }
 
+export async function generateMetadata({ params }: BioPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const member = TEAM_DATA[id as keyof typeof TEAM_DATA];
+  
+  if (!member) {
+    return {
+      title: "Specialist Bio Not Found | Horizon Virtual Care",
+    };
+  }
+
+  const title = `${member.name} | Board Certified Nephrology Specialist`;
+  const description = `${member.name} is a board-certified physician in nephrology and critical care. ${member.bio}`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `/about/${id}`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `/about/${id}`,
+      type: "profile",
+      images: [
+        {
+          url: member.image,
+          alt: member.name,
+        },
+      ],
+    },
+  };
+}
+
 export default async function TeamBioPage({ params }: BioPageProps) {
   const { id } = await params;
   const member = TEAM_DATA[id as keyof typeof TEAM_DATA];
@@ -50,8 +85,28 @@ export default async function TeamBioPage({ params }: BioPageProps) {
       image: data.image
     }));
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": member.name,
+    "image": `https://horizonvirtualcare.com${member.image}`,
+    "medicalSpecialty": "Nephrology",
+    "description": member.extendedBio || member.bio,
+    "knowsAbout": [
+      "Nephrology",
+      "Kidney Disease Management",
+      "Hypertension Management",
+      "Electrolyte Disorders",
+      "Critical Care Medicine"
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <PageHeader
         eyebrow="Clinical Leadership"
         title="Specialist Biography"

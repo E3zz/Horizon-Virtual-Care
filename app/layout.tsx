@@ -15,11 +15,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://horizonvirtualcare.com"),
   title: "Horizon Virtual Care | Virtual Nephrology Care for Your Community",
   description:
     "Bringing dedicated kidney care specialists and virtual telehealth solutions to underserved communities, ensuring expert nephrology care is kept local.",
   icons: {
     icon: "/favicon.png",
+  },
+  openGraph: {
+    title: "Horizon Virtual Care | Virtual Nephrology Care for Your Community",
+    description:
+      "Bringing dedicated kidney care specialists and virtual telehealth solutions to underserved communities, ensuring expert nephrology care is kept local.",
+    url: "/",
+    siteName: "Horizon Virtual Care",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Horizon Virtual Care | Virtual Nephrology Care for Your Community",
+    description:
+      "Bringing dedicated kidney care specialists and virtual telehealth solutions to underserved communities, ensuring expert nephrology care is kept local.",
   },
 };
 
