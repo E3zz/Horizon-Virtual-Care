@@ -72,7 +72,8 @@ export default function Nav() {
               alt="Horizon Virtual Care Logo"
               width={180}
               height={36}
-              className="h-9 w-auto object-contain"
+              style={{ width: "auto" }}
+              className="h-9 object-contain"
               priority
             />
           </Link>

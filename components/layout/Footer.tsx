@@ -19,7 +19,8 @@ export default function Footer() {
               alt="Horizon Virtual Care Logo"
               width={200}
               height={40}
-              className="h-10 w-auto object-contain"
+              style={{ width: "auto" }}
+              className="h-10 object-contain"
             />
           </Link>
           <p className="font-body text-sm text-cream/70 leading-relaxed max-w-xs">
