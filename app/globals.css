@@ -1,0 +1,103 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  
+  --color-primary-50: #eaf2f7;
+  --color-primary-100: #d1e1ee;
+  --color-primary-200: #a4c3dd;
+  --color-primary-300: #6e9cc8;
+  --color-primary-400: #4278ad;
+  --color-primary-500: #123c5c;
+  --color-primary-600: #0e304a;
+  --color-primary-700: #0b2438;
+  --color-primary-800: #071825;
+  --color-primary-900: #030c13;
+  --color-primary: #123c5c;
+
+  --color-accent-50: #fdf5f2;
+  --color-accent-100: #fbe6df;
+  --color-accent-200: #f7cfc0;
+  --color-accent-300: #f2ad94;
+  --color-accent-400: #eb825a;
+  --color-accent-500: #e8825a;
+  --color-accent-600: #d46e47;
+  --color-accent-700: #b05431;
+  --color-accent-800: #8d3e20;
+  --color-accent-900: #6a2b13;
+  --color-accent: #e8825a;
+
+  --color-cream: #FAF9F6;
+  --color-charcoal: #22262B;
+  --color-navy: #0B2A3D;
+
+  --radius-xl: 12px;
+}
+
+:root {
+  --background: #FAF9F6;
+  --foreground: #22262B;
+  --card: #ffffff;
+  --card-foreground: #22262B;
+  --popover: #ffffff;
+  --popover-foreground: #22262B;
+  --primary: #123C5C;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f5f7;
+  --secondary-foreground: #123C5C;
+  --muted: #f4f5f7;
+  --muted-foreground: #6b7280;
+  --accent: #E8825A;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #123C5C;
+  --radius: 12px;
+}
+
+.dark {
+  --background: #0B2A3D;
+  --foreground: #FAF9F6;
+  --card: #0e304a;
+  --card-foreground: #FAF9F6;
+  --popover: #0e304a;
+  --popover-foreground: #FAF9F6;
+  --primary: #FAF9F6;
+  --primary-foreground: #123C5C;
+  --secondary: #1f496f;
+  --secondary-foreground: #FAF9F6;
+  --muted: #1f496f;
+  --muted-foreground: #9ca3af;
+  --accent: #E8825A;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #1f496f;
+  --input: #1f496f;
+  --ring: #FAF9F6;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body), sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), sans-serif;
+  }
+}
