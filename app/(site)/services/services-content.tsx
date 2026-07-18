@@ -327,19 +327,19 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Card Content */}
-                  <div className="flex-1 flex flex-col justify-between bg-white border border-primary/10 rounded-2xl p-7 lg:p-8 lg:pt-10 shadow-md group-hover:border-accent/30 group-hover:shadow-xl group-hover:shadow-primary/5 transition-all duration-500 text-left">
-                    {/* Top Container with Fixed Min Height for Consistent Alignment */}
-                    <div className="flex items-start justify-between gap-2 min-h-[40px] lg:min-h-[48px] w-full">
-                      <h3 className="font-heading text-base font-bold text-charcoal/80 group-hover:text-primary transition-colors leading-tight pt-0.5">
+                  <div className="flex-1 flex flex-col justify-start bg-white border border-primary/10 rounded-2xl p-7 lg:p-8 lg:pt-10 shadow-md group-hover:border-accent/30 group-hover:shadow-xl group-hover:shadow-primary/5 transition-all duration-500 text-left h-full">
+                    {/* Header with Title and Status Badges Stacked to Prevent Overflow */}
+                    <div className="flex flex-col items-start gap-2.5 w-full">
+                      <h3 className="font-heading text-base font-bold text-charcoal/80 group-hover:text-primary transition-colors leading-tight">
                         {service.name}
                       </h3>
-                      <span className="inline-flex items-center gap-1.5 text-[9px] font-heading font-bold text-charcoal/50 bg-charcoal/5 rounded px-2 py-0.5 border border-charcoal/10 shrink-0 group-hover:text-accent group-hover:bg-accent/5 group-hover:border-accent/20 transition-all duration-500 whitespace-nowrap mt-0.5">
+                      <span className="inline-flex items-center gap-1.5 text-[9px] font-heading font-bold text-charcoal/50 bg-charcoal/5 rounded px-2 py-0.5 border border-charcoal/10 group-hover:text-accent group-hover:bg-accent/5 group-hover:border-accent/20 transition-all duration-500 whitespace-nowrap">
                         <Hourglass className="h-2.5 w-2.5" />
                         In Development
                       </span>
                     </div>
 
-                    {/* Bottom Container / Description */}
+                    {/* Description */}
                     <p className="font-body text-xs text-charcoal/60 leading-relaxed mt-4">
                       {service.desc}
                     </p>
