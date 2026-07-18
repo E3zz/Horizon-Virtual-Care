@@ -75,8 +75,7 @@ export default function ContactForm() {
                 type="text"
                 placeholder="Dr. Jane Doe"
                 className={cn(
-                  "bg-cream/50 focus:bg-white transition-all rounded-lg",
-                  errors.name && "border-destructive focus-visible:ring-destructive/30"
+                  errors.name && "border-destructive focus:ring-destructive/20 focus:border-destructive"
                 )}
                 {...register("name")}
               />
@@ -98,8 +97,7 @@ export default function ContactForm() {
                 type="text"
                 placeholder="Cape Girardeau Regional Hospital"
                 className={cn(
-                  "bg-cream/50 focus:bg-white transition-all rounded-lg",
-                  errors.organization && "border-destructive focus-visible:ring-destructive/30"
+                  errors.organization && "border-destructive focus:ring-destructive/20 focus:border-destructive"
                 )}
                 {...register("organization")}
               />
@@ -123,8 +121,7 @@ export default function ContactForm() {
                   type="email"
                   placeholder="jane.doe@hospital.org"
                   className={cn(
-                    "bg-cream/50 focus:bg-white transition-all rounded-lg",
-                    errors.email && "border-destructive focus-visible:ring-destructive/30"
+                    errors.email && "border-destructive focus:ring-destructive/20 focus:border-destructive"
                   )}
                   {...register("email")}
                 />
@@ -139,13 +136,12 @@ export default function ContactForm() {
               {/* Phone */}
               <div className="space-y-2">
                 <label htmlFor="phone" className="text-sm font-semibold text-charcoal/90">
-                  Phone Number <span className="text-cream/50 text-xs font-normal">(Optional)</span>
+                  Phone Number <span className="text-charcoal/40 text-xs font-normal ml-1">(Optional)</span>
                 </label>
                 <Input
                   id="phone"
                   type="tel"
                   placeholder="(555) 000-0000"
-                  className="bg-cream/50 focus:bg-white transition-all rounded-lg"
                   {...register("phone")}
                 />
               </div>
@@ -161,8 +157,7 @@ export default function ContactForm() {
                 placeholder="Please describe your facility's telehealth and clinical nephrology needs..."
                 rows={5}
                 className={cn(
-                  "bg-cream/50 focus:bg-white transition-all rounded-lg resize-none",
-                  errors.message && "border-destructive focus-visible:ring-destructive/30"
+                  errors.message && "border-destructive focus:ring-destructive/20 focus:border-destructive"
                 )}
                 {...register("message")}
               />
