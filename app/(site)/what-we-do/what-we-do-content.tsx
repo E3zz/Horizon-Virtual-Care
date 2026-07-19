@@ -13,7 +13,13 @@ import {
   PlusCircle, 
   ShieldCheck, 
   FileText,
-  Clock
+  Clock,
+  Camera,
+  Activity,
+  Monitor,
+  BatteryCharging,
+  Wifi,
+  Sparkles
 } from "lucide-react";
 import PageHeader from "@/components/sections/shared/PageHeader";
 import { cn } from "@/lib/utils";
@@ -311,6 +317,86 @@ export default function WhatWeDoPage() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Bedside Hardware Specifications */}
+      <section className="w-full py-20 lg:py-24 bg-cream/35 flex justify-center overflow-hidden border-y border-primary/5">
+        <div className="max-w-7xl mx-auto px-6 w-full space-y-12">
+          <div className="text-center space-y-3 max-w-3xl mx-auto">
+            <span className="text-xs font-bold tracking-wider text-accent uppercase font-heading">
+              Bedside Hardware
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-primary tracking-tight">
+              Clinical Telehealth Cart Specifications
+            </h2>
+            <p className="font-body text-sm text-charcoal/70 leading-relaxed max-w-xl mx-auto">
+              Our clinical endpoints are engineered to act as a seamless extension of the nephrologist, providing high-fidelity diagnostics at the patient&apos;s bedside.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Spec 1 */}
+            <div className="bg-white border border-primary/5 p-8 rounded-3xl space-y-4 hover:shadow-lg transition-all duration-300">
+              <div className="p-3 bg-primary/5 border border-primary/10 rounded-2xl text-primary w-fit">
+                <Camera className="h-6 w-6" />
+              </div>
+              <h3 className="font-heading text-lg font-bold text-primary">High-Definition PTZ Camera</h3>
+              <p className="font-body text-sm text-charcoal/80 leading-relaxed">
+                Remote pan-tilt-zoom controls enable our nephrologists to visually inspect patient symptoms, dialysis access sites, and skin condition in clear detail.
+              </p>
+            </div>
+            {/* Spec 2 */}
+            <div className="bg-white border border-primary/5 p-8 rounded-3xl space-y-4 hover:shadow-lg transition-all duration-300">
+              <div className="p-3 bg-primary/5 border border-primary/10 rounded-2xl text-primary w-fit">
+                <Activity className="h-6 w-6" />
+              </div>
+              <h3 className="font-heading text-lg font-bold text-primary">Integrated Digital Stethoscope</h3>
+              <p className="font-body text-sm text-charcoal/80 leading-relaxed">
+                Transmits real-time, high-fidelity cardiac and pulmonary sounds, allowing the remote physician to perform detailed auscultations.
+              </p>
+            </div>
+            {/* Spec 3 */}
+            <div className="bg-white border border-primary/5 p-8 rounded-3xl space-y-4 hover:shadow-lg transition-all duration-300">
+              <div className="p-3 bg-primary/5 border border-primary/10 rounded-2xl text-primary w-fit">
+                <Monitor className="h-6 w-6" />
+              </div>
+              <h3 className="font-heading text-lg font-bold text-primary">Dual Medical-Grade Screens</h3>
+              <p className="font-body text-sm text-charcoal/80 leading-relaxed">
+                Displays the direct video consultation feed on one screen while rendering active EHR records or lab values on the secondary screen for the nurse.
+              </p>
+            </div>
+            {/* Spec 4 */}
+            <div className="bg-white border border-primary/5 p-8 rounded-3xl space-y-4 hover:shadow-lg transition-all duration-300">
+              <div className="p-3 bg-primary/5 border border-primary/10 rounded-2xl text-primary w-fit">
+                <BatteryCharging className="h-6 w-6" />
+              </div>
+              <h3 className="font-heading text-lg font-bold text-primary">All-Day Hot-Swappable Battery</h3>
+              <p className="font-body text-sm text-charcoal/80 leading-relaxed">
+                High-capacity internal battery pack runs the cart for up to 8 hours, ensuring uninterrupted virtual rounding across multiple hospital wards.
+              </p>
+            </div>
+            {/* Spec 5 */}
+            <div className="bg-white border border-primary/5 p-8 rounded-3xl space-y-4 hover:shadow-lg transition-all duration-300">
+              <div className="p-3 bg-primary/5 border border-primary/10 rounded-2xl text-primary w-fit">
+                <Sparkles className="h-6 w-6" />
+              </div>
+              <h3 className="font-heading text-lg font-bold text-primary">Antimicrobial Sterilizable Enclosure</h3>
+              <p className="font-body text-sm text-charcoal/80 leading-relaxed">
+                Finished with a medical-grade antimicrobial coating, enabling sanitization wipes and maintaining infection control standards.
+              </p>
+            </div>
+            {/* Spec 6 */}
+            <div className="bg-white border border-primary/5 p-8 rounded-3xl space-y-4 hover:shadow-lg transition-all duration-300">
+              <div className="p-3 bg-primary/5 border border-primary/10 rounded-2xl text-primary w-fit">
+                <Wifi className="h-6 w-6" />
+              </div>
+              <h3 className="font-heading text-lg font-bold text-primary">Secure Wireless WebRTC</h3>
+              <p className="font-body text-sm text-charcoal/80 leading-relaxed">
+                Dual-band Wi-Fi connection protocols stream secure, low-latency, end-to-end encrypted video feeds without overloading local network bandwidth.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

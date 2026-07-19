@@ -37,8 +37,24 @@ const VALUES = [
 ];
 
 export default function AboutPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Who We Are | Horizon Virtual Care",
+    "description": "Learn about Horizon Virtual Care's mission to bridge the distance in kidney care and meet our board-certified clinical leadership.",
+    "publisher": {
+      "@type": "MedicalBusiness",
+      "name": "Horizon Virtual Care",
+      "url": "https://horizonvirtualcare.com"
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <PageHeader
         eyebrow="Who We Are"
         title="Bridging the Distance in Kidney Care"

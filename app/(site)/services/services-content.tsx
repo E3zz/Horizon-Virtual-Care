@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { 
@@ -17,7 +18,9 @@ import {
   Bone,
   Brain,
   Hospital,
-  Hourglass
+  Hourglass,
+  HelpCircle,
+  ChevronDown
 } from "lucide-react";
 import PageHeader from "@/components/sections/shared/PageHeader";
 import CtaBand from "@/components/sections/shared/CtaBand";
@@ -120,9 +123,81 @@ const COMING_SOON_SERVICES = [
   },
 ];
 
+const CLINICAL_FAQS = [
+  {
+    q: "How do we handle credentialing and licensing for Horizon's remote specialists?",
+    a: "All Horizon nephrologists are fully licensed and board-certified in the states where they deliver care. We handle the credentialing paperwork and coordinate directly with your hospital's Medical Staff Coordinator to obtain local clinical privileges through standard Joint Commission-compliant credentialing-by-proxy (CBP) pathways, minimizing administrative friction."
+  },
+  {
+    q: "Which Electronic Health Record (EHR) platforms are supported?",
+    a: "We support all major healthcare EMR and EHR platforms, including Epic, Cerner (Oracle Health), Meditech, CPSI, Evident, and Athenahealth. Our clinicians are credentialed directly into your EHR so that they review records, order labs, prescribe medications, and sign off on consult notes in your primary system of record."
+  },
+  {
+    q: "How are urgent acute consults requested and what are the response times?",
+    a: "For urgent acute inpatient consults (e.g. severe AKI or electrolyte crisis in the ICU), your clinical team submits a request through our portal or calls our clinical helpline. A board-certified nephrologist will connect bedside via video within 2 hours. Routine consults and scheduled clinics are configured in advance according to your facility's weekly scheduling needs."
+  },
+  {
+    q: "What does the typical integration and onboarding timeline look like?",
+    a: "A standard implementation takes 4 to 8 weeks. This includes coordinating credentialing-by-proxy, configuring secure EHR access accounts for our specialists, testing the local video cart hardware connections, and training your nursing staff as 'Nurse Extenders' on virtual consult workflows."
+  },
+  {
+    q: "How does Horizon support outpatient and in-center dialysis programs?",
+    a: "We provide virtual Medical Directorship and regular rounding services to coordinate dialysis care. Our nephrologists review weekly dialysis lab panels, adjust dialyzer prescriptions, oversee vascular access planning, and participate in clinical QAPI (Quality Assessment and Performance Improvement) meetings to keep your unit fully compliant and high-performing."
+  }
+];
+
 export default function ServicesPage() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
+
+  const servicesJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Chronic Kidney Disease (CKD) Management",
+      "provider": {
+        "@type": "MedicalBusiness",
+        "name": "Horizon Virtual Care",
+        "url": "https://horizonvirtualcare.com"
+      },
+      "description": "Longitudinal, evidence-based management for Stage 3-5 CKD to delay progression and coordinate transplants locally via secure virtual consults.",
+      "areaServed": "US"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Virtual Dialysis Support & Coordination",
+      "provider": {
+        "@type": "MedicalBusiness",
+        "name": "Horizon Virtual Care",
+        "url": "https://horizonvirtualcare.com"
+      },
+      "description": "Virtual dialysis directorship, prescriptions design, and clinical supervision to support outpatient community dialysis clinics.",
+      "areaServed": "US"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Acute Kidney Injury (AKI) Consults",
+      "provider": {
+        "@type": "MedicalBusiness",
+        "name": "Horizon Virtual Care",
+        "url": "https://horizonvirtualcare.com"
+      },
+      "description": "On-demand inpatient tele-nephrology consultations for AKI and critical care support within 2 hours.",
+      "areaServed": "US"
+    }
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
+      />
       <PageHeader
         eyebrow="Our Services"
         title="Clinical Specialty Solutions"
@@ -345,6 +420,68 @@ export default function ServicesPage() {
                     </p>
                   </div>
                 </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Clinical Operations FAQ */}
+      <section className="w-full py-20 bg-cream/15 border-t border-primary/5 flex justify-center">
+        <div className="max-w-4xl mx-auto px-6 w-full space-y-12">
+          <div className="text-center space-y-3">
+            <span className="text-xs font-bold tracking-wider text-accent uppercase font-heading">
+              Operations & Logistics
+            </span>
+            <h2 className="text-3xl font-bold font-heading text-primary flex items-center justify-center gap-2">
+              <HelpCircle className="h-6 w-6 text-accent" />
+              Clinical Operations FAQ
+            </h2>
+            <p className="font-body text-sm text-charcoal/60 max-w-lg mx-auto">
+              Answers to administrative and workflow integration questions commonly asked by hospital directors.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {CLINICAL_FAQS.map((faq, index) => {
+              const isOpen = openFaqIndex === index;
+              return (
+                <div 
+                  key={index} 
+                  className="bg-white border border-primary/10 rounded-2xl overflow-hidden hover:shadow-md transition-all duration-300"
+                >
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="w-full p-6 text-left flex justify-between items-center gap-4 cursor-pointer focus:outline-none"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="font-heading font-bold text-primary text-base sm:text-lg">
+                      {faq.q}
+                    </span>
+                    <motion.div
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="text-accent shrink-0"
+                    >
+                      <ChevronDown className="h-5 w-5" />
+                    </motion.div>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <div className="p-6 pt-0 border-t border-primary/5 font-body text-sm sm:text-base text-charcoal/80 leading-relaxed">
+                          {faq.a}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               );
             })}
           </div>

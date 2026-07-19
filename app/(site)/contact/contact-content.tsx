@@ -7,8 +7,33 @@ import ContactForm from "@/components/sections/shared/ContactForm";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function ContactPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Us | Horizon Virtual Care Integration",
+    "description": "Connect with our clinical integration team to discuss virtual nephrology coverage, licensing, and facility onboarding details.",
+    "mainEntity": {
+      "@type": "MedicalBusiness",
+      "name": "Horizon Virtual Care",
+      "telephone": "(800) 555-0199",
+      "email": "info@horizonvirtualcare.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 Medical Center Pkwy, Suite 400",
+        "addressLocality": "Cape Girardeau",
+        "addressRegion": "MO",
+        "postalCode": "63701",
+        "addressCountry": "US"
+      }
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <PageHeader
         eyebrow="Contact Us"
         title="Start the Conversation"

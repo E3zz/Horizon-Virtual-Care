@@ -75,8 +75,24 @@ export default function PartnersPage() {
   const currentTab = PARTNER_TABS.find((tab) => tab.id === activeTab) || PARTNER_TABS[0];
   const TabIcon = currentTab.icon;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Who We Work With | Healthcare System Partnerships",
+    "description": "Horizon Virtual Care partners with Critical Access Hospitals (CAHs), health systems, and correctional networks to deliver certified tele-nephrology services.",
+    "publisher": {
+      "@type": "MedicalBusiness",
+      "name": "Horizon Virtual Care",
+      "url": "https://horizonvirtualcare.com"
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <PageHeader
         eyebrow="Who We Work With"
         title="Tailored Partner Solutions"
