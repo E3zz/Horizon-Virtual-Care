@@ -49,7 +49,7 @@ export default function TelehealthExplanation() {
               Telehealth uses secure digital video communications to bridge the gap between patients and medical specialists. By placing high-definition care terminals inside local clinics, we bring elite specialty medicine directly to your hometown, saving patients hours of costly travel time and reducing the stress of seeking care far from their support networks.
             </p>
             <p>
-              When a patient needs a consult, the local onsite nurse requests an appointment, and our remote specialist connects via a secure video link. During the live session, the onsite nurse acts as the physical &ldquo;hands&rdquo; of the specialist—operating the electronic stethoscope and adjusting cameras—while our physician assesses the patient face-to-face and reviews the EMR chart in real time.
+              When a patient needs a consult, the local onsite nurse requests an appointment, and our remote specialist connects via a secure video link. During the live session, the onsite nurse acts as the physical &ldquo;hands&rdquo; of the specialist (operating the electronic stethoscope and adjusting cameras) while our physician assesses the patient face-to-face and reviews the EMR chart in real time.
             </p>
             <p>
               For rural and underserved hospitals, this model is a lifeline. It instantly extends local clinical capabilities, allowing facilities to admit and treat patients with complex conditions who would otherwise require expensive emergency transfers to large metropolitan health centers, thereby keeping care and revenue local.

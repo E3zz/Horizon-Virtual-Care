@@ -40,7 +40,7 @@ export default function SpecialtyNetwork() {
               key={name}
               className="text-xs font-heading font-semibold text-primary/55 bg-cream border border-primary/8 rounded-full px-4 py-1.5"
             >
-              {name} <span className="text-accent/60 ml-0.5">— Coming Soon</span>
+              {name} <span className="text-accent/60 ml-0.5">(Coming Soon)</span>
             </span>
           ))}
         </motion.div>

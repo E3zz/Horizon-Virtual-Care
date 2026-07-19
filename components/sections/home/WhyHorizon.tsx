@@ -11,7 +11,7 @@ const VALUE_PROPS = [
   },
   {
     title: "Rapid Response Protocols",
-    description: "In critical inpatient scenarios—such as acute kidney injury (AKI) or emergency dialysis needs—our specialists are available for live video consults within two hours, significantly reducing dangerous delays in care.",
+    description: "In critical inpatient scenarios, such as acute kidney injury (AKI) or emergency dialysis needs, our specialists are available for live video consults within two hours, significantly reducing dangerous delays in care.",
     icon: Clock,
   },
   {

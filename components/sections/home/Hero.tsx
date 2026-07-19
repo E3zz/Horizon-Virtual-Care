@@ -32,7 +32,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <span className="inline-block text-xs font-heading font-bold uppercase tracking-widest text-accent-300 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-1.5 mb-4">
-              Virtual Nephrology — Our Core Specialty
+              Virtual Nephrology: Our Core Specialty
             </span>
           </motion.div>
 
@@ -51,7 +51,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="font-body text-lg sm:text-xl text-cream/85 leading-relaxed max-w-xl"
           >
-            Board-certified nephrologists embedded inside your rural hospital through secure, high-definition telehealth — so patients never have to travel for specialty care.
+            Board-certified nephrologists embedded inside your rural hospital through secure, high-definition telehealth, so patients never have to travel for specialty care.
           </motion.p>
 
           <motion.div

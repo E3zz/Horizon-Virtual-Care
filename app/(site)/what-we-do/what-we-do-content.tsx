@@ -23,7 +23,7 @@ const STEPS = [
   {
     step: "01",
     title: "Identify Patient Need",
-    desc: "A local nurse or attending physician identifies a patient with acute or chronic nephrology needs—such as unexplained renal decline, severe hypertension, or complex dialysis requirements.",
+    desc: "A local nurse or attending physician identifies a patient with acute or chronic nephrology needs, such as unexplained renal decline, severe hypertension, or complex dialysis requirements.",
     icon: ClipboardList,
   },
   {

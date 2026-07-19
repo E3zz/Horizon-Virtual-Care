@@ -100,22 +100,22 @@ const NEPHROLOGY_PILLARS = [
 const COMING_SOON_SERVICES = [
   {
     name: "Cardiology",
-    desc: "Expanding to Cardiology — virtual cardiovascular consults coming soon.",
+    desc: "Expanding to Cardiology: virtual cardiovascular consults coming soon.",
     icon: HeartPulse,
   },
   {
     name: "Rheumatology",
-    desc: "Expanding to Rheumatology — specialized chronic disease care coming soon.",
+    desc: "Expanding to Rheumatology: specialized chronic disease care coming soon.",
     icon: Bone,
   },
   {
     name: "Neurology",
-    desc: "Expanding to Neurology — remote neurological condition support coming soon.",
+    desc: "Expanding to Neurology: remote neurological condition support coming soon.",
     icon: Brain,
   },
   {
     name: "Hospital Medicine",
-    desc: "Expanding to Hospital Medicine — telemetry and backup support coming soon.",
+    desc: "Expanding to Hospital Medicine: telemetry and backup support coming soon.",
     icon: Hospital,
   },
 ];

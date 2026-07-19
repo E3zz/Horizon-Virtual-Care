@@ -63,7 +63,7 @@ export default function ServicesOverview() {
           </h2>
           <div className="font-body text-base text-charcoal/80 leading-relaxed space-y-4">
             <p>
-              We deliver more than video consults. Horizon embeds expert kidney-care specialists into your existing clinical environment — working alongside your local nurses, attending physicians, and hospital administration.
+              We deliver more than video consults. Horizon embeds expert kidney-care specialists into your existing clinical environment, working alongside your local nurses, attending physicians, and hospital administration.
             </p>
             <p>
               Our goal is to create a sustainable, high-acuity specialty program within your facility. By combining our virtual presence with your local infrastructure, we ensure your patients receive elite care without the emotional and financial burden of medical transfers.
